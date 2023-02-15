@@ -1,19 +1,18 @@
-// Import react modules / dependencies
 import React from "react";
 
-// Component function
+// Functional Component
 const MiComponente = () => {
 
 	let usuario = {
-		nombre: "Víctor",
-		apellidos: "Robles",
-		web: "victorroblesweb.es"
+		nombre: "Leonardo",
+		apellidos: "Vidal",
+		web: "leovidal.es"
 	}
 
 	return (
 		<div>
 			<p>Este es mi primer componente</p>
-			<h3>Ddatos del usuario</h3>
+			<h3>Datos del usuario</h3>
 			<ul>
 				<li>Usuario: {JSON.stringify(usuario)}</li>
 				<li>Nombre: <strong>{usuario.nombre}</strong></li>

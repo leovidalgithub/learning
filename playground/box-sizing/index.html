@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				background-color: lightgray;
+			}
+			.main-container {
+				height: 100vh;
+				width: 100vh;
+				margin: 0 auto;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: center;
+				align-items: center;
+			}
+			.box {
+				width: 400px;
+				height: 300px;
+				margin: 15px auto;
+			}
+			.b1 {
+				/* border: 1px solid #333; */
+				background-color: lightgreen;
+			}
+			.b2 {
+				border: 6px solid #333;
+				padding: 20px;
+				background-color: lightcoral;
+				/* box-sizing: border-box; */
+			}
+		</style>
+		<title>CSS box-sizing</title>
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="box b1">This box does not have border nor padding</div>
+			<div class="box b2">
+				This box has border and padding<br>
+				Both boxes have width = 400px but this one shows 452px in the inspector
+				because the border and padding counts for the width property<br>
+				400 + 6 + 6 + 20 + 20 = 452<br><br>
+				The solution is using <strong>box-sizing: border-box;</strong>
+			</div>
+		</div>
+	</body>
+</html>

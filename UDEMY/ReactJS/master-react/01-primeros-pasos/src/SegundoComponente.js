@@ -30,3 +30,14 @@ export const AnotherComponent = () => {
 		<h3>This is AnotherComponent in SegundoComponente.js file</h3>
 	)
 }
+
+export const onFocusExample = () => {
+	return (
+		<input
+			onFocus={(e) => {
+				console.log('Input focused! 😲');
+			}}
+			placeholder="onFocus is triggered when you click this input - check the console"
+		/>
+	)
+}

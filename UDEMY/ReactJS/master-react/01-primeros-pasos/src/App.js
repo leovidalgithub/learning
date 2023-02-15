@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import MiComponente from './MiComponente'; // MiComponent was exported using export DEFAULT, so it does need using {}
-import { SegundoComponente, AnotherComponent} from './SegundoComponente';
+import { SegundoComponente, AnotherComponent, onFocusExample as OnFocusExample } from './SegundoComponente';
 import TercerComponente from './TercerComponente';
+import { EventosComponentes, MyClass } from './EventosComponentes';
 /*
 when Import, the use of {} is meant only for Components that have been exported without using Defaul keyword
 */
@@ -23,6 +24,7 @@ function App() {
 					Edit <code>src/App.js</code> and save to reload
 				</p>
 				<div className='componentes'>
+				<h5>TercerComponente starts here</h5>
 					<TercerComponente
 						nombre="Leonardo"
 						apellidos="Vidal"
@@ -35,6 +37,14 @@ function App() {
 					<SegundoComponente />
 					<hr/>
 					<MiComponente />
+					<hr/>
+					<h3>
+						<OnFocusExample />
+					</h3>
+					<hr/>
+					<EventosComponentes />
+					<hr/>
+					<MyClass name="Leo" />
 				</div>
 			</header>
 		</div>

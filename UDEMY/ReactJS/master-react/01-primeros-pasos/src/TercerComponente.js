@@ -5,12 +5,20 @@ import PropTypes from 'prop-types';
 	instead of receiving props, I destructure props object into --> {nombre, apellidos, grupo, ficha}
 */
 
+/*
+function TercerComponente({
+	nombre,
+	apellidos,
+	grupo = "R23H", // <-- default value
+	ficha,
+	}) {
+*/
 const TercerComponente = ({ // <--- props destructured
-														nombre,
-														apellidos,
-														grupo = "R23H", // <-- default value
-														ficha,
-														}) => {
+	nombre,
+	apellidos,
+	grupo = "R23H", // <-- default value
+	ficha,
+	}) => {
 
 	return (
 		<div>

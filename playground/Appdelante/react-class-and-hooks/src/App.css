@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-	height: 15vmin;
+	height: 10vmin;
 	pointer-events: none;
 }
 
@@ -37,6 +37,6 @@
 	}
 }
 
-h4, p {
+h2, h3, h4, h5, p {
 	margin: 10px auto;
 }

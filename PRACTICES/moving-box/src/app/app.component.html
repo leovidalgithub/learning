@@ -1,0 +1,7 @@
+<div id="main">
+    <app-box
+            (eventToParent)="eventFromChild($event)"
+            [varX]="varXParent" [varY]="varYParent">
+</app-box>
+</div>
+<p>myColor {{myColor}}</p>

@@ -1,0 +1,17 @@
+body {
+  padding-bottom: 50px;
+  }
+
+/* ANIMATIONS */
+.animated {
+  animation-name: myOwnAnimation;
+  animation-duration: .9s;
+  /* -webkit-animation-duration: .9s; */
+  animation-fill-mode: both;
+  /* -webkit-animation-fill-mode: both; */
+}
+
+@keyframes myOwnAnimation {
+  from { opacity: .5; }
+  to { opacity: 1; }
+}

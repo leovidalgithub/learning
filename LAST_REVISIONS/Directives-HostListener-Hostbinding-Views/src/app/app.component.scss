@@ -1,0 +1,34 @@
+.App-logo {
+  animation: App-logo-spin infinite 7s linear;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.directiveClass {
+  border: 1px solid salmon;
+}
+
+.my-class {
+  background-color: goldenrod;
+}
+
+.app-leo-Class {
+    padding: 12px;
+    margin: 8px;
+    border: 2px solid cyan;
+    h4 {
+        color: cyan;
+        text-align: center;
+    }
+}
+
+.myBlurClass {
+    filter: blur(2px);
+}

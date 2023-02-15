@@ -1,0 +1,28 @@
+<div class="myContent">
+<h1>myInputVariable = {{myVariacita}}</h1>
+    <ol>
+        <li>
+            <h2>normal content @Input with set & get called {{$prop}}</h2>
+        </li>
+        <li>
+            <p>normal content Above the projected content...</p>
+        </li>
+        <li>
+            <ng-content select=".anotherProjectedClass"></ng-content>
+        </li>
+        <li>
+            <p>normal content Below the projected content</p>
+        </li>
+        <li>
+            <ng-content select=".myProjectedClass"></ng-content>
+        </li>
+        <li>
+            <p>normal content inputVariable = {{inputVariable}}</p>
+        </li>
+        <li>
+          <div #myViewChild2>
+            <ng-content></ng-content>
+          </div>
+        </li>
+    </ol>
+</div>

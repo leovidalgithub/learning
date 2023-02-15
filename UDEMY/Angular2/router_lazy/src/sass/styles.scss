@@ -1,0 +1,22 @@
+// @import 'reset';
+@import 'theme';
+@import 'config';
+
+html {
+  body {
+    button {
+      margin-right: 11px !important;
+    }
+    .active-link {
+      color:#bef16a !important;
+    }
+    .module_title {
+      font-size: 1.6rem;
+      text-align: center;
+      color: #d1d4ff;
+    }
+  }
+}
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

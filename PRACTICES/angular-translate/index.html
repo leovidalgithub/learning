@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular-translate</title>
+</head>
+<body ng-controller="someController">
+
+    <!-- #NOTE: IN ORDER TO WORK PROPERLY, IT MUST HAVE AT LEAST ONE TRANSLATION IN USE (<h1> translate>main.name</h1>) -->
+
+    <br><br>
+    <h3>LANGUAGE AT START : {{currentIdiom}}</h3>
+    <h1 translate>HEADLINE</h1>
+    <h1 ng-bind="'HEADLINE' | translate"></h1> <!-- to avoid flickr we use ng-bind instead of {{}} -->
+    <h2>Missing translate line = <code>{{'MISSING' | translate}}</code></h2>
+    <h2 translate="main.thing"></h2>
+    <h2>{{sometext}}</h2>
+    <h3>Date = {{myDate | date : 'longDate'}}</h3>
+    <h3>Money = {{myMoney | currency}}</h3>
+
+    <button ng-click="switchLanguage('es-ES')" translate="LANG_ES-ES"></button>
+    <button ng-click="switchLanguage('en-US')" translate="LANG_EN-US"></button>
+    <button ng-click="switchLanguage('ca-CA')" translate="LANG_CA-CA"></button>
+    <button ng-click="show_language()" translate="main.show"></button><code> {{currentLanguage}}</code>
+
+    <!-- SCRIPTS -->
+    <script src="./scripts/vendor/angular.js"></script> <!-- AngularJS v1.6.2 -->
+    <script src="./scripts/vendor/angular-translate.js"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
+    <script src="./scripts/vendor/angular-translate-loader-static-files.js"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
+    <script src="./scripts/vendor/tmhDynamicLocale.js"></script> <!-- Angular Dynamic Locale - 0.1.32 -->
+    <script src="./scripts/build/built.js"></script>
+
+</body>
+</html>

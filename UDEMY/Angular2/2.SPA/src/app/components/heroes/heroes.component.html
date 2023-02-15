@@ -1,0 +1,12 @@
+<h1>Héroes <small>Marvel y DC</small></h1>
+<hr>
+
+<div class="card-columns"> 
+    <!-- (heroeSeleccionado)="verHeroe($event)" -->
+    <app-heroe-tarjeta *ngFor="let this_heroe of heroes; let this_idx = index"
+                        [heroe_tarjeta]="this_heroe" [idx]="this_idx" (mySonEvent)="myEvent($event)">
+    </app-heroe-tarjeta> 
+</div>
+
+<!-- [son_variable]="local_variable" -->
+<!-- (son_variable)="myLocalFunction($event)" -->

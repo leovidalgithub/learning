@@ -34,6 +34,7 @@ export default class CoordenatesClass extends Component {
 		) :
 		(
 			<div>
+				{this.props.children}
 				<h4>Latitud: {this.state.latitud}</h4>
 				<h4>Longitud: {this.state.longitud}</h4>
 			</div>

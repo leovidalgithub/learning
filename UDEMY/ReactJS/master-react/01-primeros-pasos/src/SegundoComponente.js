@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const SegundoComponente = () => {
-
-	const libros = ["Harry Potter", "Juegos de Tronos", "Clean Code"];
+	const [libros, setLibros] = useState(['Harry Potter', 'Juegos de Tronos', 'Clean Code', 'El Gen Egoísta']);
 
 	return (
 		<div className='segundo-componente'>
-			<h1>Listado de Libros</h1>
+			<h3>Listado de Libros</h3>
 
 			{libros.length > 0 ? /* JSX ternary*/
 				(
@@ -27,7 +26,7 @@ export const SegundoComponente = () => {
 
 export const AnotherComponent = () => {
 	return (
-		<h3>This is AnotherComponent in SegundoComponente.js file</h3>
+		<h4>This is AnotherComponent in SegundoComponente.js file</h4>
 	)
 }
 

@@ -4,32 +4,36 @@ import MiComponente from './MiComponente'; // MiComponent was exported using exp
 import { SegundoComponente, AnotherComponent, onFocusExample as OnFocusExample } from './SegundoComponente';
 import TercerComponente from './TercerComponente';
 import { EventosComponentes, MyClass } from './EventosComponentes';
+import PassingPropsMethod from './PassingPropsMethod';
 /*
 when Import, the use of {} is meant only for Components that have been exported without using Defaul keyword
 */
 
 function App() {
-
 	const ficha_medica = {
-		alture: "187 cm",
+		altura: "187 cm",
 		estado: "Bueno",
 		alergias: "Ninguna"
 	};
+
+	const methodSentToChild = (text) => {
+		console.log(text);
+	}
 
 	return (
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload
-				</p>
 				<div className='componentes'>
-				<h5>TercerComponente starts here</h5>
+					<PassingPropsMethod buttonLabel="Click me" methodSentToChild={methodSentToChild} />
+					{/* <PassingPropsMethod propsMethod="{myMethod}" /> */}
+					<hr/>
+					<h5>TercerComponente starts here</h5>
 					<TercerComponente
 						nombre="Leonardo"
 						apellidos="Vidal"
 						grupo="R21L"
-						ficha ={ficha_medica}
+						ficha={ficha_medica}
 					/>
 					<hr/>
 					<AnotherComponent />

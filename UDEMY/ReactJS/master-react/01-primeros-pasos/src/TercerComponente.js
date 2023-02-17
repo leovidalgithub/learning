@@ -2,23 +2,16 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 /* object destructuring
-	instead of receiving props, I destructure props object into --> {nombre, apellidos, grupo, ficha}
+	instead of receiving only 1 parameter 'props', I can also destructure 'props' object
+	const TercerComponente = function(props) { <--- using 'props'
 */
 
-/*
-function TercerComponente({
+const TercerComponente = ({ // <--- 'props' destructured
 	nombre,
 	apellidos,
 	grupo = "R23H", // <-- default value
 	ficha,
-	}) {
-*/
-const TercerComponente = ({ // <--- props destructured
-	nombre,
-	apellidos,
-	grupo = "R23H", // <-- default value
-	ficha,
-	}) => {
+}) => {
 
 	return (
 		<div>
@@ -28,6 +21,7 @@ const TercerComponente = ({ // <--- props destructured
 				<li>Apellidos: {apellidos}</li>
 				<li>Grupo: {grupo}</li>
 				<li>Alergias: {ficha.alergias}</li>
+				<li>Altura: {ficha.altura}</li>
 			</ul>
 		</div>
 	)

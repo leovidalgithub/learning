@@ -11,7 +11,6 @@ const MiComponente = () => {
 
 	return (
 		<div>
-			<p>Este es mi primer componente</p>
 			<h3>Datos del usuario</h3>
 			<ul>
 				<li>Usuario: {JSON.stringify(usuario)}</li>

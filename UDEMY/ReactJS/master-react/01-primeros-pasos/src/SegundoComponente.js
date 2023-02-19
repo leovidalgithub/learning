@@ -30,13 +30,32 @@ export const AnotherComponent = () => {
 	)
 }
 
-export const onFocusExample = () => {
+export const onEventsExamples = () => {
+	const handleMouseHover = (e) => {
+		console.log(`Event type: ${e.type}, _reactName: ${e._reactName}`);
+		if(e.type === 'mousemove')
+			console.log(`x: ${e.clientX}, y: ${e.clientY}`);
+	}
+
 	return (
-		<input
-			onFocus={(e) => {
-				console.log('Input focused! 😲');
-			}}
-			placeholder="onFocus is triggered when you click this input - check the console"
-		/>
+		<div className="on-events-examples">
+			<h4>onEventsExamples Component</h4>
+			<input
+				onFocus={(e) => {
+					console.log('Input focused! 😲');
+				}}
+				placeholder="onFocus is triggered when you click this input - check the console"
+			/>
+			<div
+				className="events-box"
+				onMouseEnter={ handleMouseHover}
+				onMouseLeave={ handleMouseHover}
+				onMouseDown={ handleMouseHover}
+				onMouseUp={ handleMouseHover}
+				onMouseMove={ handleMouseHover}
+			>
+				Mouse events
+			</div>
+		</div>
 	)
 }

@@ -47,7 +47,18 @@ p, h1, h2, h3, h4, h5 {
 	margin: 10px auto;
 }
 
-input {
+.on-events-examples input {
 	width: 100%;
 	font-size: 1em;
 }
+
+.on-events-examples .events-box {
+	display: inline-block;
+	width: 200px;
+	height: 90px;
+	text-align: center;
+	line-height: 90px;
+	background-color: #a73c3c;
+	color: white;
+}
+

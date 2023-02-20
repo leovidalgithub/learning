@@ -7,12 +7,14 @@ import GetDataHooks from './GetDataHooks';
 import HidingComponentsParent from './HidingComponentsParent';
 import WorkingWithArrays from './WorkingWithArrays';
 import DomPortalHook from './DOMPortalHook';
+import UsingCallback from './UseCallbackComponent';
 
 function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
+				<UsingCallback />
 				<DomPortalHook />
 				<HidingComponentsParent />
 				<h4>Coordenates using React Class Component</h4>

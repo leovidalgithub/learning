@@ -111,7 +111,7 @@ const Board = () => {
 			} else {
 				setGame({...game, clickEnabled: true})
 			}
-			}, 475);
+		}, 475);
 	}, [demo.lastFlippedId]);
 
 	return (

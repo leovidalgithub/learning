@@ -12,7 +12,6 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/', async function(req, res) {
-
 	let images = await conseguirDataParaPagina();
 	res.render('index', { title: 'Hey Images', images});
 });

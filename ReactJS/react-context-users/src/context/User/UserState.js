@@ -11,6 +11,7 @@ const UserState = (props) => {
 	}
 
 	const [state, dispatch] = useReducer(UserReducer, initialState);
+	// const [state, setState] = useState(initialState); <--- if we would use 'useState' instead of 'useReducer'
 
 	const getUsers = async () => {
 		const res = await axios.get('https://reqres.in/api/users')

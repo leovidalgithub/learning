@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from '../context/User/UserContext';
-import LastComponent from "./LastComponent";
+import { LastComponent } from "./LastComponent";
 
 const Profile = () => {
 
@@ -20,7 +20,7 @@ const Profile = () => {
 					) :
 					'No user selected!'}
 			</span>
-			<LastComponent selectedUser={selectedUser} />
+			<LastComponent />
 		</div>
 	)
 }

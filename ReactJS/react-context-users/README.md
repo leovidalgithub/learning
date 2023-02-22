@@ -13,3 +13,5 @@ Bootstrap 5 [Bootstrap 5](https://www.npmjs.com/package/bootstrap).
 REQRES [REQRES](https://reqres.in/).
 
 Fazt Code [Example YouTube link](https://www.youtube.com/watch?v=lSMBhUEVK8k&list=PLae77i-DRh96KyitWJTYJWAga__5QCBi_&index=2&t=2246s).
+
+GitHub Code [GitHub Code](https://github.com/FaztWeb/react-context-users/blob/main/src/context/User/UserState.js).

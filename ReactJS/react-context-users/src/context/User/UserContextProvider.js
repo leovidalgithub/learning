@@ -1,9 +1,17 @@
-import React, { useReducer } from "react";
+import React, { createContext, useReducer, useContext } from "react";
 import UserReducer from './UserReducer';
-import UserContext from './UserContext';
+// import UserContext from './UserContext';
 import axios from 'axios';
 
-const UserState = (props) => {
+// this object will be used by this component (UserContextProvider) using its method Provider as <UserContext.Provider></UserContext.Provider>' tags
+const UserContext = createContext();
+
+// this export function will be used by all descendents elements of the parent component (ParentComponent.js)
+export function useUserContext() {
+	return useContext(UserContext);
+}
+
+const UserContextProvider = (props) => {
 
 	const initialState = {
 		users: [],
@@ -44,6 +52,7 @@ const UserState = (props) => {
 }
 
 
-export default UserState;
+export default UserContextProvider;
 
-// in order to return a Context instead of a simple Component, we need to use createContext
+// in order to return a Context, you must return a 'UserContext' instance with its method called 'Provider'
+// const UserContext = createContext();

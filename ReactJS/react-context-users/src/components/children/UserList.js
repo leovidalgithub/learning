@@ -1,9 +1,11 @@
-import React, { useEffect, useContext } from "react";
-import UserContect from '../context/User/UserContext';
+import React, { useEffect } from "react";
+// import UserContext from '../context/User/UserContext';
+import { useUserContext } from "../../context/User/UserContextProvider";
 
 const UserList = () => {
 
-	const { users, getUsers, getProfile } =	useContext(UserContect);
+	// const { users, getUsers, getProfile } =	useContext(UserContext);
+	const { users, getUsers, getProfile } =	useUserContext();
 
 	useEffect(() => {
 		getUsers();

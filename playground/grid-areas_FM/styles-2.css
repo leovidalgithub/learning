@@ -4,12 +4,12 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, auto);
+	gap: 20px;
 	grid-template-areas:
 		'header header header'
 		'section section sidebar'
 		'widget-1 widget-2 sidebar'
 		'footer footer footer';
-	gap: 20px;
 }
 
 .header {

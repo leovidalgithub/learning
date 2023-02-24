@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
-import UserContext from '../context/User/UserContext';
+import React, { useEffect } from "react";
 import { LastComponent } from "./LastComponent";
+// import UserContext from '../context/User/UserContext';
+import { useUserContext } from "../../context/User/UserContextProvider";
 
 const Profile = () => {
 
-	const { selectedUser } = useContext(UserContext);
+	// const { selectedUser } = useContext(UserContext);
+	const { selectedUser } = useUserContext();
 
 	return (
 		<div>

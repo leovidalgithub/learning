@@ -1,16 +1,16 @@
-import './App.css';
-import Profile from './components/Profile';
-import UserList from './components/UserList';
+import '../App.css';
+import Profile from './children/Profile';
+import UserList from './children/UserList';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { ThisComponentIsOutOfTheContext } from './components/LastComponent';
+import { ThisComponentIsOutOfTheContext } from './children/LastComponent';
 
 // importing Context
-import UserState from './context/User/UserState';
+import UserContextProvider from '../context/User/UserContextProvider';
 
-function App() {
+function ParentComponent() {
 	return (
 		<div>
-			<UserState>
+			<UserContextProvider>
 				<div className='container p-4 '>
 					<div className='row'>
 						<div className='col-md-7'>
@@ -21,10 +21,10 @@ function App() {
 						</div>
 					</div>
 				</div>
-			</UserState>
+			</UserContextProvider>
 			<ThisComponentIsOutOfTheContext /> {/* <--- notice that this component is outside from 'UserState' context*/}
 		</div>
 	)
 }
 
-export default App;
+export default ParentComponent;

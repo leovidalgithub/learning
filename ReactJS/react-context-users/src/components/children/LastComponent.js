@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
-import UserContext from "../context/User/UserContext";
+import React from "react";
+// import UserContext from "../context/User/UserContext";
+import { useUserContext } from "../../context/User/UserContextProvider";
 
 export function LastComponent(props) {
 	return (
@@ -11,7 +12,7 @@ export function LastComponent(props) {
 }
 
 function AnotherComponentMore() {
-	const { selectedUser } = useContext(UserContext);
+	const { selectedUser } = useUserContext();
 
 	return (
 		<div>

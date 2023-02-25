@@ -1,7 +1,7 @@
 import '../App.css';
 import Profile from './children/Profile';
 import UserList from './children/UserList';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThisComponentIsOutOfTheContext } from './children/LastComponent';
 
 // importing Context

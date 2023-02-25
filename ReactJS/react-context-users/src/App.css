@@ -1,4 +1,19 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #797979 !important;
+}
+
 h4 {
 	font-family: monospace;
-	color: crimson;
+	color: #edca14;
+}
+
+/* preventing element from trigger events by their own, but instead trigger the event on its parent */
+.not-events {
+	pointer-events: none;
 }

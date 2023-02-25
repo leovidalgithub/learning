@@ -26,6 +26,8 @@
 .banner {
 	/* Grid */
 	display: grid;
+	grid-template-columns: 1fr;
 	grid-template-rows: auto auto auto;
-	align-items: center;
+	align-content: space-around;
+	place-items: center;
 }

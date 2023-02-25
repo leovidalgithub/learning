@@ -17,7 +17,10 @@ function AnotherComponentMore() {
 	return (
 		<div>
 			<h3>AnotherComponentMore</h3>
-			<span>{selectedUser ? selectedUser.email : 'No user selected'}</span>
+			{selectedUser ?
+				selectedUser.email
+				: <span style={{ color: '#ff9400', fontSize: '20px' }}>No user selected!</span>
+			}
 		</div>
 	)
 }
@@ -28,7 +31,7 @@ export function ThisComponentIsOutOfTheContext() {
 
 	return (
 		<div>
-			<h4 className="m-4">ThisComponentIsOutOfTheContext Component does not belong to the Context</h4>
+			<h4 className="m-4">ThisComponentIsOutOfTheContext Component does not belong to the Context.</h4>
 			{/* <span>{selectedUser ? selectedUser.email : 'No user selected'}</span> */}
 		</div>
 	)

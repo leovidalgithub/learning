@@ -20,7 +20,7 @@ const Profile = () => {
 							<h3>email: {selectedUser.email}</h3>
 						</div>
 					) :
-					'No user selected!'}
+					<span style={{color: '#ff9400', fontSize: '20px'}}>No user selected!</span>}
 			</span>
 			<LastComponent />
 		</div>

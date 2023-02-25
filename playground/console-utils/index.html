@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Console Utils</title>
+	</head>
+	<body>
+		<script>
+			console.assert(10 + 10 == 20, 'console.assert shows this message when the condition evaluates false');
+
+			setInterval(() => {
+				console.count('console.count is counting for you!');
+			}, 2100);
+
+			console.debug('console.debug');
+
+			console.info('console.info');
+
+			console.table(["console.table", "oranges", "bananas"]);
+
+			console.time('console.time-unique-name');
+
+			setTimeout(() => {
+				console.timeEnd('console.time-unique-name');
+			}, 1000);
+
+			//debugger;
+
+			console.warn('console.warn');
+
+			myFunctionToBeTraced();
+
+			function myFunctionToBeTraced() {
+				console.trace('console.trace is tracing the call stack of myFunctionToBeTraced()');
+			}
+		</script>
+	</body>
+</html>

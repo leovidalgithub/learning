@@ -13,8 +13,6 @@ const PreviousMessage = () => {
 		setMessage(e.target.value);
 	}
 
-	console.log('RENDER --> PreviousMessage ***');
-
 	return (
 		<div>
 			<hr />

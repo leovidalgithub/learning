@@ -5,16 +5,21 @@ const AutoFocus = () => {
 
 	const handleOnFocus = e => {
 		inputRef.current.focus();
-		inputRef.current.style.border = '3px solid crimson';
+		inputRef.current.style.border = '5px solid crimson';
+		inputRef.current.addEventListener('blur', function(e) {
+			inputRef.current.style.border = 'none';
+		})
 	}
-
-	console.log('RENDER --> AutoFocus ***');
 
 	return (
 		<div>
 			<hr />
 			<input type="text" ref={inputRef} />&nbsp;
-			<button onClick={handleOnFocus}>Input focus</button>
+			<button
+				onClick={handleOnFocus}
+			>
+				Input focus
+			</button>
 		</div>
 	)
 }

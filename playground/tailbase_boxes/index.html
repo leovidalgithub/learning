@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<title>Vertical Timeline</title>
+</head>
+<body>
+	<main class="container">
+		<div class="box">
+			<h1>Tailbase</h1>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, fugiat quaerat sed excepturi nostrum ab reiciendis hic magni sit doloribus? Quibusdam, laborum! Unde, cupiditate quis dolorem quo alias aliquid asperiores in illo nulla sunt itaque qui aperiam ratione quasi ullam minima tempore adipisci cumque officiis sapiente eligendi quos recusandae odio autem? Blanditiis est incidunt tenetur.
+			</p>
+			<a href="#" class="toggle">X</a>
+		</div>
+	</main>
+	<script>
+		window.onload = (event) => {
+			document.querySelector('.box .toggle').addEventListener('click', function(e) {
+				document.querySelector('.box p').classList.toggle('closed');
+			})
+		};
+	</script>
+</body>
+</html>

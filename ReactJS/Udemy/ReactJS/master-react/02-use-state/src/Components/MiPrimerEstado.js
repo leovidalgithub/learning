@@ -19,9 +19,9 @@ export const MiPrimerEstado = () => {
 				/>
 			</form>
 			{nombre == 'Leonardo' &&
-				<p>
+				<div>
 					<ConditionalComponent />
-				</p>
+				</div>
 			}
 		</div>
 	)

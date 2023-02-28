@@ -1,0 +1,45 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: grey;
+}
+
+.container {
+	height: 100vh;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	background-color: lightcoral;
+	text-align: center;
+	font-size: 18px;
+	min-height: 85px;
+	line-height: 1.2;
+	width: 400px;
+	margin: 0 auto;
+	padding: 30px;
+	position: relative;
+	transition: max-height 0.25s ease-in;
+}
+
+.box .toggle {
+	text-decoration: none;
+	position: absolute;
+	padding: 5px;
+	right: 182px;
+	bottom: -26px;
+	font-size: 1.8em;
+	border-radius: 100px;
+	background-color: lightseagreen;
+}
+
+.closed {
+	display: none;
+}

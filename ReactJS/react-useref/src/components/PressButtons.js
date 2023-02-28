@@ -12,8 +12,6 @@ const PressButtons = () => {
 		console.log('Count=', count.current);
 	}
 
-	console.log('RENDER --> PressButtons ***');
-
 	return (
 		<div>
 			<button onClick={(e) => handleClick(e, false)}>Decrease</button>

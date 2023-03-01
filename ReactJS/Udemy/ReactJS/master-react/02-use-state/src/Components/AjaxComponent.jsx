@@ -45,8 +45,7 @@ export const AjaxComponent = () => {
 	const getUsuariosAjaxAsync = () => {
 		setTimeout(async () => {
 			try {
-				// let results = await fetch('https://reqres.in/api/users?page=1');
-				let results = await fetch('https://reqresxxx.in/api/users?page=1');
+				let results = await fetch('https://reqres.in/api/users?page=1');
 				let {data} = await results.json();
 				setUsuarios(data);
 				setCargando(false);

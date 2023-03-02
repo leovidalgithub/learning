@@ -1,0 +1,40 @@
+.container {
+	width: 80%;
+	max-width: 900px;
+	margin: 30px auto;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(3, auto);
+	justify-content: space-around;
+}
+
+.counter-box {
+	width: 250px;
+	height: 210px;
+	background-color: white;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.counter-box button {
+	width: 175px;
+	height: 33px;
+	background-color: #1066d4;
+	color: white;
+	border: none;
+	margin-top: 10px;
+}
+
+.counter-box button:hover {
+	background-color: #0a4ea7;
+}
+
+@media screen and (max-width: 1024px) {
+	.container {
+		grid-template-columns: auto;
+		justify-content: center;
+		align-items: center;
+	}
+}

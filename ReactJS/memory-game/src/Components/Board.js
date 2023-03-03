@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Cards from './Cards';
 import _ from 'lodash';
 
 const Board = () => {
-	const [cards, setCards] = useState([]);
 	const values = [
 		'Gallina', 'Pato', 'Perro', 'Mosca', 'Tiburón', 'Chivo', 'Gato', 'Pez'
 	];
+	const [cards, setCards] = useState([]);
 	const [game, setGame] = useState({
 		matches: 0,
 		clickEnabled: false
@@ -14,7 +14,8 @@ const Board = () => {
 	const [demo, setDemo] = useState({
 		lastFlippedId: null,
 		numberOfCycles: 0,
-		totalOfCycle: 11
+		totalOfCycles: 13,
+		finish: false
 	});
 
 	const handleClick = (e, id) => {
@@ -61,10 +62,10 @@ const Board = () => {
 			return (
 					<Cards
 						key={index}
-						id={cards[index].id}
-						isFlipped={cards[index].isFlipped}
-						value={cards[index].value}
-						isMatched={cards[index].isMatched}
+						id={card.id}
+						isFlipped={card.isFlipped}
+						value={card.value}
+						isMatched={card.isMatched}
 						clickEnabled={game.clickEnabled}
 						onClick={(e) => handleClick(e, index)}
 					/>
@@ -85,14 +86,14 @@ const Board = () => {
 				"isMatched": false
 			})
 		});
+
 		setCards(tempCards);
-		}, []);
+	}, []);
 
 	useEffect(() => {
-		if(!cards.length) {
-			setDemo({...demo, lastFlippedId: 0}); // <-- this assign meant to be for triggering the dependency so useEffect runs again
+		if (!cards.length || demo.finish)
 			return;
-		}
+
 		let tempCards = cards.slice();
 		let randomCardId = null;
 
@@ -104,15 +105,16 @@ const Board = () => {
 				randomCardId = Math.floor(Math.random() * cards.length);
 			} while (randomCardId === demo.lastFlippedId);
 
-			if (demo.numberOfCycles < demo.totalOfCycle) { // <-- when this count is reach, the demo process stops ('demo.lastFlippedId' dependency will no longer updated)
+			if (demo.numberOfCycles < demo.totalOfCycles) { // <-- demo process stops when the 'totalOfCycles' is reached, and, therefore 'cards' is no longer updated
 				tempCards[randomCardId].isFlipped = true;
 				setCards(tempCards);
 				setDemo({...demo, lastFlippedId: randomCardId, numberOfCycles: demo.numberOfCycles + 1});
 			} else {
-				setGame({...game, clickEnabled: true})
+				setGame({ ...game, clickEnabled: true})
+				setDemo({ ...demo, finish: true});
 			}
-		}, 475);
-	}, [demo.lastFlippedId]);
+		}, 575);
+	}, [cards]);
 
 	return (
 		<div className="main-container">

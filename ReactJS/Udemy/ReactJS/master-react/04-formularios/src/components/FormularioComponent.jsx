@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const FormularioComponent = () => {
-
 	const [usuario, setUsuario] = useState({});
 
 	const conseguirDatosForlumario = e => {
@@ -18,7 +17,7 @@ const FormularioComponent = () => {
 
 	const cambiarDatos = e => {
 		let name = e.target.name;
-		/* A shallow clone is a clone that has its primitive properties cloned but his REFERENCE properties still reference the original */
+		/* A shallow clone is a clone that has its primitive properties cloned but his REFERENCE properties STILL reference the original */
 		// let usuario_para_modificar = Object.assign({}, usuario);
 
 		setUsuario(prevUsuario => ({
@@ -27,6 +26,8 @@ const FormularioComponent = () => {
 			})
 		);
 	}
+
+console.debug('Formulario 1 render!');
 
 	return (
 		<div className="form">
@@ -51,4 +52,4 @@ const FormularioComponent = () => {
 	)
 }
 
-export default FormularioComponent;
+export default React.memo(FormularioComponent);

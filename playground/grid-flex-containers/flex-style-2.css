@@ -1,0 +1,20 @@
+.flex-container-2 {
+	background-color: #ccc;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-container-2 .box {
+	background-color: #118a84;
+	border: 1px solid #a59292;
+	height: 170px;
+	margin: 5px 15px;
+	line-height: 170px;
+	text-align: center;
+	flex-grow: 1;
+}

@@ -27,12 +27,16 @@ console.debug('Formulario 2 render!');
 			<h3>Formulario Validation</h3>
 			<p style={{color: 'red'}} >{ data }</p>
 			<div className="input input__user">
-				<label htmlFor="user">User</label>&nbsp;
-				<input type="text" placeholder="User" id="user" onChange={e => setUser(e.target.value)} ref={element} />
+				<label>
+					User&nbsp;
+					<input type="text" placeholder="User" onChange={e => setUser(e.target.value)} ref={element} />
+				</label>
 			</div>
 			<div className="input input__pass">
-				<label htmlFor="pass">Password</label>&nbsp;
-				<input type="text" placeholder="Password" id="pass" onChange={e => setPass(e.target.value)} />
+				<label>
+					Password&nbsp;
+					<input type="text" placeholder="Password" onChange={e => setPass(e.target.value)} />
+				</label>
 			</div>
 			<hr />
 			<h5>Errors</h5>

@@ -2,6 +2,9 @@ import React from "react";
 import ReactCardFlip from 'react-card-flip';
 
 const Cards = (props) => {
+
+console.count('Cards render #' + props.id);
+
 	return (
 		<ReactCardFlip isFlipped={props.isFlipped || props.isMatched} flipDirection="horizontal">
 			<div
@@ -17,4 +20,4 @@ const Cards = (props) => {
 	)
 }
 
-export default Cards;
+export default React.memo(Cards);

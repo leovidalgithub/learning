@@ -1,0 +1,22 @@
+
+
+https://npmjs.com
+
+
+npm semver calculator
+https://semver.npmjs.com/
+
+^3.7.1 --> updates minor and patch (if available, for example --> 3.8.0)
+~3.7.1 --> updates only path (if available, for example --> 3.7.2)
+
+
+'exact' install the package without adding ^ or ~ in the package.json
+npm install --save-exact jsonwebtoken
+npm install --E jsonwebtoken
+
+
+VS Code extension
+Version Lens --> when package.json is open, you will see a 'V' in the top right, when clicking it shows you the availables updates for each package installed 
+
+package: npm-check
+npm-check -u

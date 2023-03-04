@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Cards from './Cards';
 import _ from 'lodash';
 
@@ -14,11 +14,11 @@ const Board = () => {
 	const [demo, setDemo] = useState({
 		lastFlippedId: null,
 		numberOfCycles: 0,
-		totalOfCycles: 13,
+		totalOfCycles: 3,
 		finish: false
 	});
 
-	const handleClick = (e, id) => {
+	const handleClick = useCallback((e, id) => {
 		let tempCards = cards.slice();
 		tempCards[id].isFlipped = !tempCards[id].isFlipped;
 		setCards(tempCards);
@@ -32,7 +32,7 @@ const Board = () => {
 
 			verifyMatchandWin(flippedCards);
 		}
-	}
+	}, [cards])
 
 	const verifyMatchandWin = (flippedCards) => {
 		let matched = false;

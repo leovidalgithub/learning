@@ -38,8 +38,13 @@ const UserList = () => {
 							type="button"
 							onClick={removeProfile}
 						>
-						{/* 'not-events' class is preventing elements from trigger events by their own,
-							but instead trigger the event on its parent (bubble) */}
+						{/*
+							CSS 'not-events' class is preventing elements from trigger events by their own,
+							but instead trigger the event on its parent (html Bubbling)
+
+							Another approach would be not using CSS 'pointer-events: none;' in the child elements ('span' and 'i'),
+							and instead use 'event.currentTarget' to get the parent element 'button' with the event listener
+							 */}
 							<span className="not-events">
 								Delete&nbsp;&nbsp;
 							</span>

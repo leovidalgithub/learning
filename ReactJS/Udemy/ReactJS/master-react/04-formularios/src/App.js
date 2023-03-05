@@ -4,6 +4,7 @@ import FormularioComponent from './components/FormularioComponent';
 import { FormularioValidation } from './components/FormularioValidation';
 import { useState, createContext, useContext, useEffect } from 'react';
 import FetchingData from './components/FetchingData';
+import LoginComponent from './components/LoginComponent';
 
 const AppContext = createContext();
 
@@ -12,7 +13,7 @@ export const useAppContext = () => {
 };
 
 function App() {
-	const [selectedForm, setSelectedForm] = useState('form3');
+	const [selectedForm, setSelectedForm] = useState('form4');
 	const [data, setData] = useState(0);
 
 	const handleRadioChange = e => {
@@ -39,12 +40,14 @@ function App() {
 				return <FormularioValidation />
 			case 'form3':
 				return <FetchingData />
+			case 'form4':
+				return <LoginComponent />
 			default:
 				return <h3>No component to display!</h3>
 		}
 	}
 
-console.debug('App render!');
+// console.debug('App render!');
 
 	return (
 		<div className="App">
@@ -57,6 +60,8 @@ console.debug('App render!');
 					<label htmlFor="form2">Formulario 2</label><br />
 					<input type="radio" id="form3" value="form3" defaultChecked={selectedForm === 'form3'} name="formulario" />&nbsp;
 					<label htmlFor="form3">Formulario 3</label><br />
+					<input type="radio" id="form4" value="form4" defaultChecked={selectedForm === 'form4'} name="formulario" />&nbsp;
+					<label htmlFor="form4">Login Form 4</label><br />
 				</div>
 				<h3>Displaying { selectedForm }</h3>
 				<AppContext.Provider value={data}>

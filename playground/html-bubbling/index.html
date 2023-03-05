@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>html-bubbling</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		main {
+			background-color: antiquewhite;
+			height: 100vh;
+			text-align: center;
+		}
+
+		section {
+			width: 80%;
+			height: 300px;
+			margin: 100px auto;
+			background-color: aquamarine;
+		}
+
+		h1 {
+			border: 2px solid salmon;
+			margin: 90px auto;
+		}
+
+		a {
+			display: inline-block;
+			width: 80px;
+			height: 50px;
+			background-color: #0092cc;
+			color: white;
+			border-radius: 10px 10px;
+			text-decoration: none;
+			line-height: 50px;
+		}
+
+		/* i {
+			pointer-events: none;
+		} */
+	</style>
+</head>
+<body>
+	<main>
+		main
+		<section>
+			section
+			<h1>H1 Title</h1>
+			<a href="#">
+				<i>X</i>
+			</a>
+		</section>
+	</main>
+	<script>
+		document.querySelector('h1').addEventListener('click', function (e) {
+			console.log('h1 bubbles', e.bubbles);
+			console.log('h1 target', e.target);
+			console.log('h1 currentTarget', e.currentTarget);
+		})
+
+		document.querySelector('a').addEventListener('click', function (e) {
+			console.log('a bubbles', e.bubbles);
+			console.log('a target', e.target);
+			console.log('a currentTarget', e.currentTarget);
+		})
+
+		document.querySelector('section').addEventListener('click', function (e) {
+			console.log('section bubbles', e.bubbles);
+			console.log('section target', e.target);
+			console.log('section currentTarget', e.currentTarget);
+			// e.stopPropagation(); // <--- preventing event from continue bubbling to 'main', body, html and beyond...
+		})
+
+		document.querySelector('main').addEventListener('click', function (e) {
+			console.log('main bubbles', e.bubbles);
+			console.log('main target', e.target);
+			console.log('main currentTarget', e.currentTarget);
+		})
+	</script>
+</body>
+
+</html>

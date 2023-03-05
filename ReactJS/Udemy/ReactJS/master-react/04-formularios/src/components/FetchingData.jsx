@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from "react";
+// import { getData } from '../services';
 
 const FetchingData = () => {
 
 	const [data, setData] = useState(null);
 
-	const FetchData = () => {
-		fetch('http://localhost:8080/api/builder/getAllResourcesMedia')
-			.then(data => data.json())
-			.then(json => {
-				setData(json);
-			})
+	const FetchData = async () => {
+		// try {
+		// 	const response = await getData();
+		// 	setData(response.data);
+		// } catch (error) {
+		// 	console.error(error);
+		// }
+
+		// getData()
+		// 	.then(response => {
+		// 		setData(response.data);
+		// 	})
+		// 	.catch(err => {
+		// 		console.error(err);
+		// 	})
 	}
 
 	useEffect(() => {
 		FetchData();
 
 		return () => {
-			console.log('FetchingData component was desmounted');
+			console.log('FetchingData component was unmounted');
 		}
 	}, []);
 

@@ -13,7 +13,7 @@ h4 {
 	color: #edca14;
 }
 
-/* preventing element from trigger events by their own, but instead trigger the event on its parent */
-.not-events {
+/* preventing element from trigger events by their own, but instead trigger the event on its parent (html Bubbling) */
+/* .not-events {
 	pointer-events: none;
-}
+} */

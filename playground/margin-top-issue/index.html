@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>margin-top issue</title>
+	<!-- https://stackoverflow.com/questions/9519841/why-does-this-css-margin-top-style-not-work -->
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		main {
+			background-color: #1c65d3;
+			height: 100vh;
+			text-align: center;
+			/* overflow: hidden; */
+		}
+
+		section {
+			width: 80%;
+			min-height: 300px;
+			margin: 100px auto;
+			background-color: aquamarine;
+			/* overflow: hidden; */
+		}
+
+		h1 {
+			border: 2px solid salmon;
+			margin: 90px auto;
+		}
+		p {
+			font-family: 'Courier New', Courier, monospace;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<!-- <span>Any content will like this will prevent this issue from happening</span> -->
+		<section>
+			<!-- Another content avoiding the issue here in 'section' -->
+			<h1>H1 Title</h1>
+			<p>
+				When a 'div' inside another 'div' has set a margin-top, the margin-top appears to be in the parent 'div'<br /><br />
+				if you inspect the element, the margin is applied to the desire element but the result is like the margin would have being applied to the parent 'div'<br /><br /><br />
+				In the present example there are 2 similar situations:<br /><br />
+				'section' has a margin-top: 100px but it is like that margin-top is set to his parent: 'main'<br />
+				'h1' also has a margin-top: 90px but is applied to his parent: 'section'<br /><br />
+				A workaround is just adding a 'overflow: hidden' to the parent container
+				also, when the parent container ('main' or 'section' in this example) has some content like text, it's no necessary using 'overflow: hidden'<br /><br />
+				Try uncommented out either lines 20 and 28, or lines 43 and 45
+		</section>
+	</main>
+</body>
+</html>

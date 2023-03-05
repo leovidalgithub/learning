@@ -32,7 +32,7 @@ const ConditionalComponent = () => {
 		alert('Hi! Component mounted');
 
 		return () => {
-			alert('Component desmounted, bye');
+			alert('Component unmounted, bye');
 		}
 	}, []);
 

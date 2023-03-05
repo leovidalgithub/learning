@@ -52,14 +52,13 @@ const UserContextProvider = (props) => {
 			type: 'GET_PROFILE',
 			payload: res.data.data
 		})
-		console.debug(res.data.data);
 	}
 
 	const removeProfile = e => {
-		e.stopPropagation(); /* <--- stop bubbling (and load a profile)*/
+		e.stopPropagation(); /* <--- stop bubbling (... preventing from trigger the '<a></a>' parent click event and load a profile)*/
 		dispatch({
 			payload: e.target.value,
-			// payload: id,
+			// payload: e.currentTarget.value, <--- if we don't use 'pointer-events: none;' in the child elements, we just need to use 'currentTarget' to get the parent element with the event listener
 			type: 'REMOVE_PROFILE'
 		})
 	};

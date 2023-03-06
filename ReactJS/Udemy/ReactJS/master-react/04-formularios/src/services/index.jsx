@@ -1,2 +1,2 @@
 export { login, setHeaderTokenAfterLogin } from './LoginService';
-export { getNewData } from './DataService';
+export { getAllResources, getAllResourcesMedia } from './DataService';

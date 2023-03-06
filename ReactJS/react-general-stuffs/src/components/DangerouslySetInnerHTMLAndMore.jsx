@@ -1,7 +1,7 @@
 const DangerouslySetInnerHTMLAndMore = () => {
 
 	const htmlData = 'This rich text is injected into the DOM by using <strong style="color: crimson">dangerouslySetInnerHTML</strong>... <b>ipsum</b>';
-// something added after commit
+
 	return (
 		<div>
 			<hr />

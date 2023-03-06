@@ -1,25 +1,18 @@
 import React, { useState, useEffect } from "react";
-// import { getData } from '../services';
+import { getAllResourcesMedia } from '../services';
 
 const FetchingData = () => {
 
-	const [data, setData] = useState(null);
+	const [data, setData] = useState([]);
+	const [error, setError] = useState('');
 
 	const FetchData = async () => {
-		// try {
-		// 	const response = await getData();
-		// 	setData(response.data);
-		// } catch (error) {
-		// 	console.error(error);
-		// }
-
-		// getData()
-		// 	.then(response => {
-		// 		setData(response.data);
-		// 	})
-		// 	.catch(err => {
-		// 		console.error(err);
-		// 	})
+		try {
+			const response = await getAllResourcesMedia();
+			setData(response.data);
+		} catch (err) {
+			setError(err.response.data.errorTitle + err.response.data.errorMsg);
+		}
 	}
 
 	useEffect(() => {
@@ -46,6 +39,8 @@ const FetchingData = () => {
 						)
 					})
 				}
+				{error &&
+					<div dangerouslySetInnerHTML={{ __html: error}}></div>}
 			</ul>
 		</div>
 	)

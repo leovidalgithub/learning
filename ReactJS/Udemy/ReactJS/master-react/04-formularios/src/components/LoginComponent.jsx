@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { login, setHeaderTokenAfterLogin, getNewData } from '../services';
+import { login, setHeaderTokenAfterLogin, getAllResources } from '../services';
 
 const LoginComponent = () => {
 	const [resources, setResources] = useState([]);
@@ -8,7 +8,6 @@ const LoginComponent = () => {
 		const doLogin = async () => {
 			try {
 				const response = await login();
-				console.log('response', response);
 				if (response.data.statusCode === 200) {
 					sessionStorage.setItem('AUTH_TOKEN', response.data.token);
 					setHeaderTokenAfterLogin();
@@ -21,7 +20,7 @@ const LoginComponent = () => {
 	},[]);
 
 	const handleGetData = () => {
-		getNewData()
+		getAllResources()
 			.then(data => {
 				setResources(data.data.data);
 				console.log('data', data);

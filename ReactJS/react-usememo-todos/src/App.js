@@ -21,7 +21,7 @@ function App() {
 					<button onClick={() => setTab('done')}>Completados</button>
 					<div>
 						<label htmlFor="dark-mode">Modo Oscuro</label>
-						<input onChange={() => setIsDark(!isDark)} type="checkbox" id="dark-mode" name="dark-mode" />
+						<input onChange={() => setIsDark(!isDark)} type="checkbox" id="dark-mode" />
 					</div>
 				</div>
 				<TodoList

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getAllResourcesMedia } from '../services';
 
 const FetchingData = () => {
-
 	const [data, setData] = useState([]);
 	const [error, setError] = useState('');
 

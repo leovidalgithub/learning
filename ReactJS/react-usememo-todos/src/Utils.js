@@ -15,6 +15,8 @@ export function createTodos() {
 
 export function filterTodos(type, todos) {
 	console.log('@filterTodos --> Simulating a delay...');
+
+	// Simulating a delay
 	let startTime = performance.now();
 	while (performance.now() - startTime < 1000) {
 	}

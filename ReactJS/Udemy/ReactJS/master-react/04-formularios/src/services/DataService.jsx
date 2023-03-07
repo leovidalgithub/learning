@@ -11,8 +11,8 @@ export const getAllResources = () => {
 }
 
 export const getAllResourcesMedia = () => {
-return axiosInstance({
+	return axiosInstance({
 		method: 'GET',
-	url: '/builder/getAllResourcesMedia'
+		url: '/builder/getAllResourcesMedia'
 	});
 }

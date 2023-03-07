@@ -19,7 +19,7 @@ function App() {
 	const handleClick2 = useCallback(() => {
 		// setCount2(count2 + 1);
 		setCount2(prevCount => prevCount + 1);
-	}, []); // <--- same behavior without using dependency but using the previous value
+	}, []); // <--- same behavior without using dependency but using the previous count (prevCount) value instead
 
 	const handleClick3 = useCallback(() => {
 		setCount3(count3 + 1);

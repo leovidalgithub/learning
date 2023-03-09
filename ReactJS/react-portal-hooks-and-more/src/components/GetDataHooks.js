@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function GetDataHook(url) {
 	const [data, setData] = useState({
@@ -10,12 +10,14 @@ function GetDataHook(url) {
 		fetch(url)
 			.then(res => res.json())
 			.then(data => {
-				setData({
-					data: data.results,
-					count: data.count
-				})
+				setTimeout(() => {
+					setData({
+						data: data.results,
+						count: data.count
+					})
+				}, 2000);
 			})
-	}, [])	/* <---- this empty array as second parameter tells useEffect to be excecuted only once unless a state variable is indicated */
+	}, [])	/* <---- this empty array as second parameter tells useEffect to be excecuted only once unless a dependency (ie. state variable) is indicated */
 
 	return data;
 }
@@ -38,6 +40,7 @@ export default function GetDataHooks() {
 			<div>
 				<hr></hr>
 				<AnotherHook />
+				<h5 style={{color: 'crimson'}}>pokemon API</h5>
 				<p>count: {count}</p>
 				<p>name: {data[2].name}</p>
 				<p>JSON {JSON.stringify(data[0])}</p>

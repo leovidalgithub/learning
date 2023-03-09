@@ -1,0 +1,33 @@
+.dom-portal-hook h3 {
+	color: crimson;
+	/* background-color: green !important; */
+}
+
+.portal-class {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: aliceblue;
+}
+
+.portal-class p {
+	font-size: clamp(16px, 2vw, 24px);
+	color: #444;
+}
+
+.coordenates-class {
+	color: lightyellow;
+	border: 1px solid lightblue;
+	padding: 8px;
+}
+
+.coordenates-hooks {
+	color: lightyellow;
+	border: 1px solid lightcoral;
+	padding: 8px;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 5px auto;
+}

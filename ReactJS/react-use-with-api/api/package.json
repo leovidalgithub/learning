@@ -1,0 +1,22 @@
+{
+	"name": "react-search",
+	"version": "1.0.0",
+	"description": "react search app using react-use debounce",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Leo",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "2.0.21"
+	},
+	"dependencies": {
+		"cors": "2.8.5",
+		"dotenv": "16.0.3",
+		"express": "4.18.2",
+		"express-myconnection": "1.0.4",
+		"mysql": "2.18.1"
+	}
+}

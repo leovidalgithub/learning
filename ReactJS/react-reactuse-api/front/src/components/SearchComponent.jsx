@@ -18,8 +18,8 @@ const SearchComponent = () => {
 	}, 2000, [val]);
 
 	const getSearchData = () => {
-		// fetch(`http://localhost:5000/api/search?text=${val}`)
-		fetch(`https://react-search-api.leovidal.es/api/search?text=${val}`)
+		fetch(`http://localhost:5000/api/search?text=${val}`)
+		// fetch(`https://react-search-api.leovidal.es/api/search?text=${val}`)
 			.then(results => results.json())
 			.then(data => {
 				setResults(data);
@@ -42,9 +42,10 @@ const SearchComponent = () => {
 						return <li key={item.id}>{item.mediaTitle}</li>
 					})}
 				</ul>
-
 			</div>
-			<SpinnerComponent visible={spinnerVisible} />
+			<div>
+				<SpinnerComponent visible={spinnerVisible} />
+			</div>
 		</div>
 	)
 }

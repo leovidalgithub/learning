@@ -27,6 +27,7 @@ app.use(myconnection(mysql, {
 	database: process.env.DB_DATABASE
 }, 'single'));
 
+app.use(require('./cache'));
 app.use('/api', require('./routes/routes'));
 
 app.listen(app.get('port'), () => {

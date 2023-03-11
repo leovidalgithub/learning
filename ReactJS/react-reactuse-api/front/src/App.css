@@ -1,0 +1,88 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	color-scheme: dark;
+	color: rgba(255, 255, 255, 0.76);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	place-items: flex-start;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+#root {
+	background-color: #0c0b0b;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+.logo {
+	height: 4.5em;
+	will-change: filter;
+	transition: filter 300ms;
+}
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 8px auto;
+}
+
+.results {
+	font-size: clamp(16px, 3vw, 19px);
+	text-align: left;
+	color: lightcoral;
+}
+
+.blocks-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: .7;
+}
+
+input {
+	font-size: 22px;
+}
+
+.search {
+	font-size: 21px;
+	margin: 10px auto;
+}
+
+.search span {
+	color: lightseagreen;
+}
+
+.env {
+	text-align: left;
+}
+
+.env span {
+	color: lightsalmon;
+}

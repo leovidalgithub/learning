@@ -9,10 +9,9 @@ router.get('/search', (req, res, next) => {
 			res.status(401).json({ msg: 'connection error', err: err })
 
 		conn.query(`SELECT * FROM resourcesMedia WHERE mediaTitle LIKE '%${text}%'`, (err, results) => {
-			if (err) {
-				res.statusCode = 301;
-				res.json({msg: 'error', msg: 'err'})
-			}
+			if (err)
+				res.status(402).json({ msg: 'error', err: err })
+
 			setTimeout(() => {
 				res.status(200).json(results)
 			}, Math.round(Math.random() * (2000 - 500) + 500));

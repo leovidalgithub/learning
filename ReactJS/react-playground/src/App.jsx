@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import './App.scss'
-import SearchComponent from './components/SearchComponent';
+import EnvironmentVariables from './components/EnvironmentVariables';
+import DangerouslySetInnerHTMLAndMore from './components/DangerouslySetInnerHTMLAndMore';
 
 function App() {
-
 	return (
 		<div className="App">
 			<div>
@@ -16,7 +16,8 @@ function App() {
 				</a>
 			</div>
 			<h1>Vite + React</h1>
-			<SearchComponent />
+			<EnvironmentVariables />
+			<DangerouslySetInnerHTMLAndMore />
 		</div>
 	)
 }

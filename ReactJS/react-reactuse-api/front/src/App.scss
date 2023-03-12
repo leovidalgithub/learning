@@ -1,0 +1,35 @@
+
+
+.App {
+	img {
+		border: 2px solid blue;
+	}
+}
+
+.search {
+	font-size: 21px;
+	margin: 10px auto;
+}
+
+.search {
+	span {
+	 color: crimson;
+	}
+}
+
+@mixin my-mixin($size) {
+	border: 1px solid lightcoral;
+	font-size: $size;
+}
+
+.results {
+	@include my-mixin(24px);
+	color: darken($color: lightcoral, $amount: 10%);
+}
+
+$base-color: gray;
+@for $i from 1 through 6 {
+	li:nth-child(5n + #{$i}) {
+		background-color: lighten($base-color, $i * 5%);
+	}
+}

@@ -3,23 +3,23 @@ import { useState } from 'react';
 import { SpinnerComponent } from './SpinnerComponent';
 
 const SearchComponent = () => {
-
 	const [val, setVal] = useState('');
 	const [debounceValue, setDebounceValue] = useState('');
 	const [results, setResults] = useState([]);
 	const [spinnerVisible, setSpinnerVisible] = useState(false);
+	const baseURL = import.meta.PROD ? 'http://localhost:5000/api' : 'https://react-search-api.leovidal.es/api';
 
 	const [, cancel] = useDebounce(() => {
-		if(!val) return;
-
-		setSpinnerVisible(true);
+		setResults([]);
 		setDebounceValue(val);
-		getSearchData();
+
+		if(val)
+			getSearchData();
 	}, 2000, [val]);
 
 	const getSearchData = () => {
-		fetch(`http://localhost:5000/api/search?text=${val}`)
-		// fetch(`https://react-search-api.leovidal.es/api/search?text=${val}`)
+		setSpinnerVisible(true);
+		fetch(`${baseURL}/search?text=${val}`)
 			.then(results => results.json())
 			.then(data => {
 				setResults(data);

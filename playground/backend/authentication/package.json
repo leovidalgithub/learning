@@ -1,0 +1,22 @@
+{
+	"name": "authentication",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"start": "set PORT=5000 && nodemon main.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cookie-parser": "^1.4.6",
+		"express": "4.18.2",
+		"nanoid": "4.0.1"
+	},
+	"devDependencies": {
+		"nodemon": "2.0.21"
+	}
+}

@@ -6,7 +6,6 @@
 	"scripts": {
 		"all": "npm i && vite",
 		"dev": "vite",
-		"start": "set VITE_PACKAGE_JSON_VARIABLE=abcdefg && vite",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
@@ -20,6 +19,7 @@
 		"@types/react": "18.0.27",
 		"@types/react-dom": "18.0.10",
 		"@vitejs/plugin-react-swc": "3.0.0",
+		"sass": "^1.59.2",
 		"vite": "4.1.0"
 	}
 }

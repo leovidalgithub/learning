@@ -1,13 +1,13 @@
 import express from 'express';
 const router = express.Router();
 import { nanoid } from 'nanoid';
-import { userAuth } from './helpers/userAuth.js';
+import { userAuth } from '../helpers/userAuth.js';
 
-router.get('/login', (req, res, next) => {
-	console.log('login');
+router.post('/login', (req, res, next) => {
 	try {
 		const { user, password } = req.body;
 		const profile = userAuth(user, password);
+
 		if(!profile)
 			return res.status(401).send({message: '401 Unauthorized'})
 
@@ -18,14 +18,14 @@ router.get('/login', (req, res, next) => {
 		res.json({ sessionId, profile });
 
 	} catch (error) {
-		res.status(400).json({ exception: error})
+		res.status(400).json({ exception: error.message})
 	}
 })
 
-// logout and sessiong destroy
+// logout and session destroy
 router.get('/logout', function (req, res, next) {
 	req.session.destroy(function (err) {
-		console.log('Destroyed session')
+		console.log('session destroyed!');
 	})
 	res.send('...logout');
 });
@@ -53,14 +53,4 @@ router.get('/logout', function (req, res, next) {
 // 	}
 // })
 
-router.get('/userInfo/:id', (req, res, next) => {
-	const id = req.params.id;
-	const { sessionId } = req.cookies;
-
-	if(!sessionId)
-		return res.status(400).json({ exception: 'unathorized' })
-
-	res.send({ id, sessionId });
-})
-
-export { router };
+export { router as userRouter };

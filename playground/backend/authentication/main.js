@@ -1,31 +1,21 @@
 import express from 'express';
-const app = express();
-import { router } from './route.js';
-import cookieParser from 'cookie-parser';
-import { setCache } from './cache.js';
 import session from 'express-session';
-import { sessionChecker } from './helpers/userAuth.js'
+import { apiRouter } from './routes/apiRoute.js';
+import { userRouter } from './routes/userRoute.js';
+import middlewares from './middlewares/index.js';
+const app = express();
 
 app.set('port', process.env.PORT || 3000);
 
+// middlewares
 app.use(express.json());
 app.use(express.text());
-app.use(setCache);
-app.use(cookieParser());
-app.use(session({
-		name: 'sessionName', // the name of the session id cookie
-		secret: 'Your_Secret_Key',
-		resave: false,
-		saveUninitialized: true, // to make the session persist, otherwise it always create a new session
-		cookie:
-			{
-				secure: false, // This will only work if you have https enabled. If this is set to ‘true’ during development then you need to ensure you have https enabled, otherwise a new session id will be generated each time
-				maxAge: 50000 // This is the max-age of the cookie in ms
-			}
-}));
+app.use(middlewares.init.setCache);
+app.use(session(middlewares.init.session));
 
-app.all('/', sessionChecker);
-app.use('/', router);
+// routes
+app.use('/api', [middlewares.sessionChecker], apiRouter);
+app.use('/user', userRouter);
 
 app.listen(app.get('port'), () => {
 	console.log('Listening on port ' + app.get('port'));

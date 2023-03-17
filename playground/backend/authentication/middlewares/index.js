@@ -22,11 +22,10 @@ const middlewares = {
 	},
 	sessionChecker: (req, res, next) => {
 		console.log('Session Checker');
-		// console.log('sessionId', req.cookies);
 		console.log('req.session.id', req.session.id);
-		// console.log(req.session);
 		console.log('originalMaxAge', req.session.cookie.originalMaxAge);
 		console.log('maxAge', req.session.cookie.maxAge);
+		// console.log('sessionId', req.cookies);
 
 		if (req.session.profile) {
 			console.log('Profile: YES');

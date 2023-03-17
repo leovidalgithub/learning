@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
 const CrearComponent = () => {
-
 	const tituloComponente = 'Añadir película';
 	const [pelisState, setPelisState] = useState([]);
 	// const {title, description} = peliState;
@@ -15,15 +15,10 @@ const CrearComponent = () => {
 			description: e.target.description.value
 		}
 
-		GuardarNuevaPeli(peli);
-	}
-
-	const GuardarNuevaPeli = peli => {
 		const pelisTMP = pelisState.slice();
 		pelisTMP.push(peli);
 		setPelisState(pelisTMP);
-
-		sessionStorage.setItem('pelis', JSON.stringify(pelisTMP));
+		GuardarEnStorage('pelis', pelisTMP);
 	}
 
 	return (

@@ -6,14 +6,10 @@
 	margin: 0 auto;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: center;
 }
 .flex-container .box {
 	border: 1px solid #a59292;
-	width: 200px;
-	height: 170px;
-	text-align: center;
+	min-height: 155px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

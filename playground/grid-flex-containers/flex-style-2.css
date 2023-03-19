@@ -10,7 +10,8 @@
 }
 
 .flex-container-2 .box {
-	background-color: #118a84;
+	background-color: #117d8a;
+	color: white;
 	border: 1px solid #a59292;
 	height: 170px;
 	margin: 5px 15px;

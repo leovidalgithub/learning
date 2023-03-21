@@ -1,0 +1,45 @@
+body {
+	margin: 0;
+	background-color: gray;
+}
+
+.container {
+	width: 80%;
+	margin: 50px auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: relative;
+	column-gap: 25px;
+}
+
+.container::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	border-left: 2px solid black;
+	z-index: 1;
+}
+
+.column {
+	padding: 20px;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+
+.col1 {
+	background-color: lightcoral;
+}
+
+.col2 {
+	background-color: lightgreen;
+}
+
+@media screen and (max-width: 800px) {
+.container {
+		width: 90%;
+		grid-template-columns: 1fr;
+		row-gap: 25px;
+	}
+}

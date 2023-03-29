@@ -14,6 +14,6 @@ h4 {
 }
 
 /* preventing element from trigger events by their own, but instead trigger the event on its parent (html Bubbling) */
-/* .not-events {
+.not-events {
 	pointer-events: none;
-} */
+}
